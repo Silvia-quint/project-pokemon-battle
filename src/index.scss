@@ -14,7 +14,14 @@
   vertical-align: middle;
 }
 
-.roster-container {
+.title {
+  @include fonts;
+
+  color: darkblue;
+}
+
+.roster-container,
+.player-box {
   @include disp;
 
   width: 60%;
@@ -46,18 +53,16 @@
 }
 
 .selector-box {
+  @include disp;
+
   width: 60%;
   height: 50%;
   background: lightblue;
   border: 2px solid darkblue;
-  margin: 10px;
-  padding: 5px;
-  display: flex;
   justify-content: space-around;
-  align-items: center;
   flex-direction: row;
 
-  & #button {
+  & button {
     width: 150px;
   }
 
