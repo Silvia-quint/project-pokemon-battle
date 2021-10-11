@@ -147,8 +147,16 @@ body {
     border: 2px solid darkblue;
     flex-direction: column;
 
+    & .buttons {
+      @include disp;
+    }
+
     & #start1,
-    #start2 {
+    #start2,
+    #potion1P1,
+    #potion2P1,
+    #potion1P2,
+    #potion2P2 {
       width: 100px;
       border-radius: 10px;
     }
