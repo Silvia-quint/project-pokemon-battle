@@ -14,23 +14,45 @@
   vertical-align: middle;
 }
 
-.title {
-  @include fonts;
-
+@mixin h1-fonts {
+  font-family: arial, helvetica, sans-serif;
   color: darkblue;
+  font-size: 35px;
+  line-height: 50px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+@mixin status-fonts {
+  font-family: arial, helvetica, sans-serif;
+  color: darkblue;
+  font-size: 14px;
+
+  /* line-height: 50px; */
+  text-align: center;
+  vertical-align: middle;
+}
+
+body {
+  margin: 0;
+}
+
+.title {
+  @include disp;
+  @include h1-fonts;
 }
 
 .roster-container,
 .player-box {
   @include disp;
 
-  width: 60%;
-  height: 300px;
+  width: 90%;
+  height: 250px;
   background: lightblue;
   border: 2px solid darkblue;
   flex-direction: column;
 
-  & .pokemon-box {
+  & .pokemon-roster {
     @include disp;
 
     width: 100%;
@@ -52,32 +74,94 @@
   }
 }
 
+.vs {
+  @include disp;
+  @include h1-fonts;
+
+  width: 90%;
+  height: 40px;
+  background: lightblue;
+  border: 2px solid darkblue;
+}
+
 .selector-box {
   @include disp;
 
-  width: 60%;
+  width: 90%;
   height: 50%;
   background: lightblue;
   border: 2px solid darkblue;
   justify-content: space-around;
   flex-direction: row;
 
-  & button {
-    width: 150px;
+  & #button1,
+  #button2 {
+    width: 100px;
+    border-radius: 10px;
   }
 
-  & .pokemon-selected {
+  & .pokemon-box {
     @include disp;
 
-    width: 200px;
-    height: 50px;
-    background: gold;
-    border-radius: 20px;
+    width: 40%;
+    min-height: 100px;
+    border: 2px solid darkblue;
+    flex-direction: column;
 
-    & h1 {
-      @include fonts;
+    & .pokemon-selected {
+      @include disp;
 
-      color: darkblue;
+      width: 80%;
+      min-height: 100px;
+      margin-top: 1em;
+      padding: 10px;
+      background: gold;
+      border-radius: 20px;
+
+      & h1 {
+        @include h1-fonts;
+      }
+    }
+
+    & .life-container {
+      background: gold;
+      border-radius: 25px;
+      width: 200px;
+      height: 25px;
+    }
+
+    & .life {
+      background: green;
+      border-radius: 25px;
+      width: var(--life);
+      height: 100%;
+      transition: width 0.75s;
+    }
+  }
+
+  & .game-status {
+    @include disp;
+
+    width: 40%;
+    min-height: 100px;
+    border: 2px solid darkblue;
+    flex-direction: column;
+
+    & #start1,
+    #start2 {
+      width: 100px;
+      border-radius: 10px;
+    }
+
+    & .status {
+      @include status-fonts;
+
+      background: lightgrey;
+      border: 1px dotted black;
+      width: 80%;
+      min-height: 100px;
+      margin-top: 1em;
+      padding: 10px;
     }
   }
 }
