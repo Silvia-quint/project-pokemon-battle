@@ -1,4 +1,4 @@
-// Choose Pokemon of the all roster.
+// CHOOSE POKEMON TO THE ALL ROSTER.
 
 const pokemonRoster = document.querySelectorAll(".pokemon");
 const player1 = document.querySelector(".player1 .pokemon-selected>h1");
@@ -16,6 +16,7 @@ const getPokemonRandom = (max = 14) => {
   return Math.floor(Math.random() * max);
 };
 
+// -> Selec buttons
 // eslint-disable-next-line no-undef
 button1.addEventListener("click", choosePokemonP1);
 // eslint-disable-next-line no-undef
@@ -31,6 +32,7 @@ const getRandomNumberP1 = (min = 1, max = 6) => {
   return Math.floor(Math.random() * max) + min;
 };
 
+// -> Attack
 const attackP1 = () => {
   const lifeDecreaseP1 = getRandomNumberP1(0, 10);
   lifeP1 -= lifeDecreaseP1;
@@ -45,22 +47,45 @@ const attackP1 = () => {
   }
 };
 
+// -> Reset life
 const lifeResetP1 = () => {
   // clearInterval(idIntervalP1);
   lifeP1 = 100;
 };
 
+// -> Healer life
+const lifeHealed10P1 = () => {
+  const potion1Healer = 10;
+  lifeP1 += potion1Healer;
+  lifeBarP1.style.setProperty("--life", `${lifeP1}%`);
+  healer10MessageP1();
+};
+
+const lifeHealed20P1 = () => {
+  const potion2Healer = 20;
+  lifeP1 += potion2Healer;
+  lifeBarP1.style.setProperty("--life", `${lifeP1}%`);
+  healer20MessageP1();
+};
+
+// -> Messages
 const setDefenseMessageP1 = () => {
   statusP1.innerHTML += "<div class=\"event\">**Well Done! You've stopped the attack!</div>";
 };
 const setAttackMessageP1 = (lifeDecreaseP1) => {
-  statusP1.innerHTML += `<div class="event">**Auch! You've lost (<strong>-${lifeDecreaseP1}%</strong>) of life</div>`;
+  statusP1.innerHTML += `<div class="event">**Auch! You've lost <strong>-${lifeDecreaseP1}%</strong> of life</div>`;
 };
 const endMessageP1 = () => {
   statusP1.innerHTML += "<div class=\"event\">**<strong>Sorry, you've lost the game...</strong></div>";
 };
 const winMessageP1 = () => {
   statusP2.innerHTML += "<div class=\"event\">**<strong>Congratulation! YOU'VE WIN!!</strong></div>";
+};
+const healer10MessageP1 = () => {
+  statusP1.innerHTML += "<div class=\"event\">**Potion Restored <strong>+10%</strong> of health</div>";
+};
+const healer20MessageP1 = () => {
+  statusP1.innerHTML += "<div class=\"event\">**Potion Restored <strong>+20%</strong> of health</div>";
 };
 
 // const idIntervalP1 = setInterval(() => attackP1(), 1000);
@@ -75,6 +100,7 @@ const getRandomNumberP2 = (min = 1, max = 6) => {
   return Math.floor(Math.random() * max) + min;
 };
 
+// -> Attack
 const attackP2 = () => {
   const lifeDecreaseP2 = getRandomNumberP2(0, 10);
   lifeP2 -= lifeDecreaseP2;
@@ -89,16 +115,33 @@ const attackP2 = () => {
   }
 };
 
+// -> Reset life
 const lifeResetP2 = () => {
   // clearInterval(idIntervalP2);
   lifeP2 = 100;
 };
 
+// -> Healer life
+const lifeHealed10P2 = () => {
+  const potion1Healer = 10;
+  lifeP2 += potion1Healer;
+  lifeBarP2.style.setProperty("--life", `${lifeP2}%`);
+  healer10MessageP2();
+};
+
+const lifeHealed20P2 = () => {
+  const potion2Healer = 20;
+  lifeP2 += potion2Healer;
+  lifeBarP2.style.setProperty("--life", `${lifeP2}%`);
+  healer20MessageP2();
+};
+
+// -> Messages
 const setDefenseMessageP2 = () => {
   statusP2.innerHTML += "<div class=\"event\">**Well Done! You've stopped the attack!</div>";
 };
 const setAttackMessageP2 = (lifeDecreaseP2) => {
-  statusP2.innerHTML += `<div class="event">**Auch! You've lost (<strong>-${lifeDecreaseP2}%</strong>) of life</div>`;
+  statusP2.innerHTML += `<div class="event">**Auch! You've lost <strong>-${lifeDecreaseP2}%</strong> of life</div>`;
 };
 const endMessageP2 = () => {
   statusP2.innerHTML += "<div class=\"event\">**<strong>Sorry, you've lost the game...</div>";
@@ -106,7 +149,12 @@ const endMessageP2 = () => {
 const winMessageP2 = () => {
   statusP1.innerHTML += "<div class=\"event\">**<strong>Congratulation! YOU'VE WIN!!</strong> </div>";
 };
-
+const healer10MessageP2 = () => {
+  statusP2.innerHTML += "<div class=\"event\">**Potion Restored <strong>+10%</strong> of health</div>";
+};
+const healer20MessageP2 = () => {
+  statusP2.innerHTML += "<div class=\"event\">**Potion Restored <strong>+20%</strong> of health</div>";
+};
 // const idIntervalP2 = setInterval(() => attackP2(), 1000);
 
 // ATTACK BUTTON P1 AND P2
@@ -115,3 +163,15 @@ const winMessageP2 = () => {
 start1.addEventListener("click", attackP2);
 // eslint-disable-next-line no-undef
 start2.addEventListener("click", attackP1);
+
+// HEALER BUTTONS P1 AND P2
+
+// eslint-disable-next-line no-undef
+potion1P1.addEventListener("click", lifeHealed10P1);
+// eslint-disable-next-line no-undef
+potion2P1.addEventListener("click", lifeHealed20P1);
+
+// eslint-disable-next-line no-undef
+potion1P2.addEventListener("click", lifeHealed10P2);
+// eslint-disable-next-line no-undef
+potion2P2.addEventListener("click", lifeHealed20P2);
