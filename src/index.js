@@ -170,3 +170,6 @@ potion2P1.addEventListener("click", lifeHealed20P1);
 potion1P2.addEventListener("click", lifeHealed10P2);
 // eslint-disable-next-line no-undef
 potion2P2.addEventListener("click", lifeHealed20P2);
+
+// OPTION PARA ACORTR LOS MENSAJES Y LIMPIAR EL CUADRO
+// ==> if (array.length > 5) array.shift()
