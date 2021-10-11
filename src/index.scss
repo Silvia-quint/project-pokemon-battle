@@ -94,11 +94,11 @@ body {
   justify-content: space-around;
   flex-direction: row;
 
-  & #button1,
+  /* & #button1,
   #button2 {
     width: 100px;
     border-radius: 10px;
-  }
+  } */
 
   & .pokemon-box {
     @include disp;
