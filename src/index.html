@@ -16,7 +16,7 @@
 
     <div class="roster-container">
 
-      <div class="pokemon-box">
+      <div class="pokemon-roster">
         <div id="pikachu" class="pokemon">Pikachu</div>
         <div id="snorlax" class="pokemon">Snorlax</div>
         <div id="bulbasaur" class="pokemon">Bulbasaur</div>
@@ -35,28 +35,43 @@
 
     </div>
 
-    <div class="start"></div>
-
     <div class="players-box">
       <div class="selector-box player1">
         <button id="button1">Choose Pokemon</button>
-        <div class="pokemon-selected player1">
-          <h1></h1>
+        <div class="pokemon-box">
+          <div class="pokemon-selected">
+            <h1></h1>
+          </div>
+          <div class="life-container">
+            <div class="life"></div>
+          </div>
+        </div>
+        <div class="game-status">
+          <button id="start1">---> ATTACK!</button>
+          <div class="status"></div>
         </div>
       </div>
 
+    <div class="vs">
+      <h1>VS</h1>
+    </div>
+
       <div class="selector-box player2">
-        <div class="pokemon-selected player2">
-          <h1></h1>
+        <div class="game-status">
+          <button id="start2">---> ATTACK!</button>
+          <div class="status"></div>
+        </div>
+        <div class="pokemon-box">
+          <div class="pokemon-selected player2">
+            <h1></h1>
+          </div>
+          <div class="life-container">
+            <div class="life"></div>
+          </div>
         </div>
         <button id="button2">Choose Pokemon</button>
       </div>
-
     </div>
-    
-    <div class="vs"></div>
-
-    <div class="cpu"></div>
 
   </section>
 </body>
