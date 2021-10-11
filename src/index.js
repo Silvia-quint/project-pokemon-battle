@@ -49,7 +49,6 @@ const attackP1 = () => {
 
 // -> Reset life
 const lifeResetP1 = () => {
-  // clearInterval(idIntervalP1);
   lifeP1 = 100;
 };
 
@@ -88,8 +87,6 @@ const healer20MessageP1 = () => {
   statusP1.innerHTML += "<div class=\"event\">**Potion Restored <strong>+20%</strong> of health</div>";
 };
 
-// const idIntervalP1 = setInterval(() => attackP1(), 1000);
-
 // STAGE - PLAYER 2.
 const lifeBarP2 = document.querySelector(".player2 .life-container .life");
 const statusP2 = document.querySelector(".player2 .status");
@@ -117,7 +114,6 @@ const attackP2 = () => {
 
 // -> Reset life
 const lifeResetP2 = () => {
-  // clearInterval(idIntervalP2);
   lifeP2 = 100;
 };
 
@@ -155,7 +151,6 @@ const healer10MessageP2 = () => {
 const healer20MessageP2 = () => {
   statusP2.innerHTML += "<div class=\"event\">**Potion Restored <strong>+20%</strong> of health</div>";
 };
-// const idIntervalP2 = setInterval(() => attackP2(), 1000);
 
 // ATTACK BUTTON P1 AND P2
 
