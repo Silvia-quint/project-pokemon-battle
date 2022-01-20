@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./src/scss/index.scss">
+  <script type="module" src="./src/js/index.js"></script>
+  <title>Pokemon Battle</title>
+</head>
+
+<body>
+  <section id="container">
+
+    <h1 class="title">POKEMON BATTLE</h1>
+
+    <div class="roster-container">
+
+      <div class="pokemon-roster">
+        <div id="pikachu" class="pokemon">Pikachu</div>
+        <div id="snorlax" class="pokemon">Snorlax</div>
+        <div id="bulbasaur" class="pokemon">Bulbasaur</div>
+        <div id="squirtle" class="pokemon">Squirtle</div>
+        <div id="charmander" class="pokemon">Charmander</div>
+        <div id="vulpix" class="pokemon">Vulpix</div>
+        <div id="arcanine" class="pokemon">Arcanine</div>
+        <div id="persian" class="pokemon">Persian</div>
+        <div id="rapidash" class="pokemon">Rapidash</div>
+        <div id="chicorita" class="pokemon">Chicorita</div>
+        <div id="eevee" class="pokemon">Eevee</div>
+        <div id="dragonite" class="pokemon">Dragonite</div>
+        <div id="ditto" class="pokemon">Ditto</div>
+        <div id="lugia" class="pokemon">Lugia</div>
+      </div>
+
+    </div>
+
+    <div class="players-box">
+      <div class="selector-box player1"> PLAYER 1
+        <div class="pokemon-box"> Push to selec a Pokemon
+          <div type="button" id="button1" class="pokemon-selected">
+            <h1></h1>
+          </div>
+          <div class="life-container">
+            <div class="life"></div>
+          </div>
+        </div>
+        <div class="game-status"> Push to start
+          <div class="buttons">
+            <button id="start1">ATTACK!</button>
+            <button id="potion1P1">POTION 1</button>
+            <button id="potion2P1">POTION 2</button>
+          </div>
+          <div class="status"></div>
+        </div>
+      </div>
+
+    <div class="vs">
+      <h1>VS</h1>
+    </div>
+
+      <div class="selector-box player2">
+        <div class="game-status"> Push to start
+          <div class="buttons">
+            <button id="start2">ATTACK!</button>
+            <button id="potion1P2">POTION 1</button>
+            <button id="potion2P2">POTION 2</button>
+          </div>
+          <div class="status"></div>
+        </div>
+        <div class="pokemon-box"> Push to selec a Pokemon
+          <div type="button" id="button2" class="pokemon-selected">
+            <h1></h1>
+          </div>
+          <div class="life-container">
+            <div class="life"></div>
+          </div>
+        </div>
+        PLAYER 2
+      </div>
+    </div>
+
+  </section>
+</body>
+</html>
